@@ -108,7 +108,7 @@ nav ul li a{
 }
 
 
-
+/*Vista Tablet*/
 @media only screen and (min-width:600px) {
     #grilla {
         height: 80vh;
@@ -129,7 +129,7 @@ nav ul li a{
 
 }
 
-
+/*vista escritorio*/
 @media only screen and (min-width:1024px) {
     #grilla {
         height: 100vh;
