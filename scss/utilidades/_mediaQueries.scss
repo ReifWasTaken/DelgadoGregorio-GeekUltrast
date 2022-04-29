@@ -1,3 +1,18 @@
+
+ #grilla {
+    height: 60vh;
+    display: grid;
+    grid-template-areas:
+      "header"
+      "img"
+      "nav"
+      "titulo"
+      "main"
+      "footer";
+    grid-template-rows: repeat(6, 1fr); 
+    grid-template-columns: 1fr;
+ }
+ 
 /*Vista Tablet*/
 @media only screen and (min-width:600px) {
     #grilla {

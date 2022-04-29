@@ -1,4 +1,50 @@
+#grilla {
+  height: 60vh;
+  display: grid;
+  grid-template-areas: "header" "img" "nav" "titulo" "main" "footer";
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr; }
 
+/*Vista Tablet*/
+@media only screen and (min-width: 600px) {
+  #grilla {
+    height: 80vh;
+    display: grid;
+    grid-template-areas: "header header" "nav img" "titulo titulo" "main main" "footer footer";
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr); }
+    #grilla #img img {
+      display: block; } }
+
+/*vista escritorio*/
+@media only screen and (min-width: 1024px) {
+  #grilla {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "header header header header" "img img img img" "nav nav nav nav"         "titulo titulo titulo titulo" "main main main main" "footer footer footer footer";
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr); }
+    #grilla header h1 {
+      font-size: 8em; }
+    #grilla #img img {
+      height: 75vh; }
+  /*Menu*/
+  .border {
+    justify-content: center; }
+  nav ul li:hover {
+    transform: rotate(5deg);
+    background-color: #eb9027; }
+  main .imagenChica:hover {
+    scale: 1.2;
+    transition: 0.5s; }
+  main .imagenes:hover {
+    scale: 1.1;
+    transition: 0.5s; } }
+
+header h1, #titulo h2 {
+  text-align: center;
+  font-family: 'Freckle Face', cursive;
+  color: #EF763D; }
 
 * {
   margin: 0;
@@ -12,32 +58,19 @@ body {
   height: 100vh; }
 
 /* imagen principal y titulo*/
-#grilla {
-  height: 60vh;
-  display: grid;
-  grid-template-areas: "header"
- "img"
- "nav"
- "titulo"
- "main"
- "footer";
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: 1fr; }
-  #grilla header {
-    grid-area: header;
-    background-color: white; }
-    #grilla header h1 {
-      grid-area: tituloMarca;
-      text-align: center;
-      font-family: 'Freckle Face', cursive;
-      font-size: 4em;
-      color: #EF763D; }
-  #grilla #img {
-    grid-area: img; }
-    #grilla #img img {
-      display: none;
-      width: 100%;
-      height: 100%; }
+header {
+  grid-area: header;
+  background-color: rgba(245, 245, 245, 0.959); }
+  header h1 {
+    grid-area: tituloMarca;
+    font-size: 4em; }
+
+#img {
+  grid-area: img; }
+  #img img {
+    display: none;
+    width: 100%;
+    height: 100%; }
 
 /*Menu de navegacion*/
 nav {
@@ -53,7 +86,7 @@ nav {
       margin: 0.8em;
       padding: 0.3em;
       text-transform: uppercase;
-      background-color: whitesmoke;
+      background-color: rgba(245, 245, 245, 0.959);
       border: 0.3rem solid whitesmoke;
       border-radius: 2rem; }
       nav ul li a {
@@ -79,52 +112,4 @@ main {
 #titulo {
   grid-area: titulo; }
   #titulo h2 {
-    text-align: center;
-    font-family: 'Freckle Face', cursive;
-    font-size: 3rem;
-    color: #EF763D; }
-
-    /*Vista Tablet*/
-@media only screen and (min-width: 600px) {
-   #grilla {
-     height: 80vh;
-     display: grid;
-     grid-template-areas: "header header"
-  "nav img"
-  "titulo titulo"
-  "main main"
-  "footer footer";
-     grid-template-rows: repeat(5, 1fr);
-     grid-template-columns: repeat(2, 1fr); }
-     #grilla #img img {
-       display: block; } }
- 
- /*vista escritorio*/
- @media only screen and (min-width: 1024px) {
-   #grilla {
-     height: 100vh;
-     display: grid;
-     grid-template-areas: "header header header header"
-  "img img img img"
-  "nav nav nav nav"        
-  "titulo titulo titulo titulo"
-  "main main main main"
-  "footer footer footer footer";
-     grid-template-rows: repeat(6, 1fr);
-     grid-template-columns: repeat(4, 1fr); }
-     #grilla header h1 {
-       font-size: 8em; }
-     #grilla #img img {
-       height: 75vh; }
-   /*Menu*/
-   .border {
-     justify-content: center; }
-   nav ul li:hover {
-     transform: rotate(5deg);
-     background-color: #eb9027; }
-   main .imagenChica:hover {
-     scale: 1.2;
-     transition: 0.5s; }
-   main .imagenes:hover {
-     scale: 1.1;
-     transition: 0.5s; } }
+    font-size: 3rem; }

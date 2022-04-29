@@ -1,6 +1,26 @@
 @import "utilidades/mediaQueries";
 
 $colorPrincipal: #97c27a;
+
+@mixin tamImagnes ($width, $heigth){
+    
+    width: $width;
+    height: $heigth;
+}
+
+$navegacion: (
+        bg-navegacion: rgba(245, 245, 245, 0.959),
+        borde-navegacion: 0.3rem solid whitesmoke,
+        texto-navegacion: uppercase,
+);
+
+%fuentes{
+    text-align: center;
+    font-family: 'Freckle Face', cursive;
+    color: #EF763D;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -15,75 +35,59 @@ $colorPrincipal: #97c27a;
  }
 
 /* imagen principal y titulo*/
- #grilla {
-    height: 60vh;
-    display: grid;
-    grid-template-areas:
-      "header"
-      "img"
-      "nav"
-      "titulo"
-      "main"
-      "footer";
-    grid-template-rows: repeat(6, 1fr); 
-    grid-template-columns: 1fr;
 
     header {
         grid-area: header;
-       background-color: white;
+        background-color: map-get($map: $navegacion, $key: bg-navegacion);
      
        h1{
         grid-area: tituloMarca;
-        text-align: center;
-        font-family: 'Freckle Face', cursive;
         font-size: 4em;
-        color: #EF763D;
-      
+        @extend %fuentes;
       }
     } 
     #img {
         grid-area: img;
       
         img{
- 
+            
             display: none;
-            width: 100%;
-            height: 100%;
+            @include tamImagnes(100%, 100%);
           }
           
       }    
- }
+ 
 
  /*Menu de navegacion*/
  nav {
     grid-area: nav;
     background-color: #ee7339dc;
 
-    ul{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
 
-        li{
- 
-            list-style: none;
-            list-style-type: none;
-            margin: 0.8em;
-            padding: 0.3em;
-            text-transform: uppercase;
-            background-color: whitesmoke;
-            border: 0.3rem solid whitesmoke;
-            border-radius: 2rem;
+            li{
+    
+                list-style: none;
+                list-style-type: none;
+                margin: 0.8em;
+                padding: 0.3em;
+                text-transform: map-get($map: $navegacion, $key: texto-navegacion);
+                background-color: map-get($map: $navegacion, $key: bg-navegacion);
+                border: map-get($map: $navegacion, $key: borde-navegacion);
+                border-radius: 2rem;
 
-            a{
-                text-decoration: none;
-                text-align: center;
-                color: darkgreen;
-                font-family: 'Freckle Face', cursive;
-              }            
-          } 
-     }
- }
+                a{
+                    text-decoration: none;
+                    text-align: center;
+                    color: darkgreen;
+                    font-family: 'Freckle Face', cursive;
+                }            
+            } 
+        }
+    } 
 
  /*Footer*/
  footer {
@@ -97,8 +101,7 @@ $colorPrincipal: #97c27a;
     flex-wrap: wrap;
 
     img{
-        width: 30%;
-        height: 30%;
+        @include tamImagnes(30%, 30%);
         margin: 5px;
       }
  }
@@ -107,10 +110,10 @@ $colorPrincipal: #97c27a;
      grid-area: titulo;
 
     h2{
-        text-align: center;
-        font-family: 'Freckle Face', cursive;
         font-size: 3rem;
-        color: #EF763D;
+        @extend %fuentes;
     }
 
 }
+
+
