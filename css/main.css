@@ -4,6 +4,14 @@
   grid-template-areas: "header" "img" "nav" "titulo" "main" "footer";
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: 1fr; }
+  #grilla main {
+    justify-content: center; }
+    #grilla main img {
+      width: 75%;
+      height: 30%;
+      padding: 1em; }
+  #grilla .imagenfaq {
+    display: none; }
 
 /*Vista Tablet*/
 @media only screen and (min-width: 600px) {
@@ -13,6 +21,15 @@
     grid-template-areas: "header header" "nav img" "titulo titulo" "main main" "footer footer";
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(2, 1fr); }
+    #grilla main img {
+      width: 50%;
+      height: 30%;
+      padding: 1em; }
+    #grilla main .imagenfaq {
+      display: flex;
+      flex-wrap: wrap;
+      height: 20%;
+      width: 70%; }
     #grilla #img img {
       display: block; } }
 
@@ -28,15 +45,27 @@
       font-size: 8em; }
     #grilla #img img {
       height: 75vh; }
+    #grilla main img {
+      width: 30%;
+      height: 50%;
+      padding: 1em; }
+    #grilla main .encuesta {
+      display: inline-block;
+      margin: 3.3em; }
+    #grilla main .imagenfaq {
+      margin: 5em;
+      display: flex;
+      flex-wrap: wrap;
+      height: 20%;
+      width: 40%; }
+    #grilla main .faq {
+      display: inline-block; }
   /*Menu*/
   .border {
     justify-content: center; }
   nav ul li:hover {
     transform: rotate(5deg);
     background-color: #eb9027; }
-  main .imagenChica:hover {
-    scale: 1.2;
-    transition: 0.5s; }
   main .imagenes:hover {
     scale: 1.1;
     transition: 0.5s; } }
@@ -79,7 +108,7 @@ nav {
   nav ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; }
+    justify-content: space-around; }
     nav ul li {
       list-style: none;
       list-style-type: none;
@@ -98,18 +127,27 @@ nav {
 /*Footer*/
 footer {
   grid-area: footer;
-  font-family: 'Indie Flower', cursive; }
+  font-family: 'Indie Flower', cursive;
+  position: fixed;
+  bottom: 0; }
 
+/*main*/
 main {
   grid-area: main;
   display: flex;
   flex-wrap: wrap; }
-  main img {
-    width: 30%;
-    height: 30%;
-    margin: 5px; }
 
 #titulo {
   grid-area: titulo; }
   #titulo h2 {
     font-size: 3rem; }
+
+/*preguntas frecuentes*/
+.faq {
+  font-size: 2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #0179db; }
+  .faq .preguntasFrecuentes {
+    text-align: center;
+    font-size: 1.7em;
+    color: #EF763D; }
