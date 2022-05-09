@@ -1,7 +1,12 @@
 #grilla {
   height: 60vh;
   display: grid;
-  grid-template-areas: "header" "img" "nav" "titulo" "main" "footer";
+  grid-template-areas: "header"
+ "img"
+ "nav"
+ "titulo"
+ "main"
+ "footer";
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: 1fr; }
   #grilla main {
@@ -18,7 +23,11 @@
   #grilla {
     height: 80vh;
     display: grid;
-    grid-template-areas: "header header" "nav img" "titulo titulo" "main main" "footer footer";
+    grid-template-areas: "header header"
+ "nav img"
+ "titulo titulo"
+ "main main"
+ "footer footer";
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(2, 1fr); }
     #grilla main img {
@@ -38,7 +47,12 @@
   #grilla {
     height: 100vh;
     display: grid;
-    grid-template-areas: "header header header header" "img img img img" "nav nav nav nav"         "titulo titulo titulo titulo" "main main main main" "footer footer footer footer";
+    grid-template-areas: "header header header header"
+ "img img img img"
+ "nav nav nav nav"        
+ "titulo titulo titulo titulo"
+ "main main main main"
+ "footer footer footer footer";
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(4, 1fr); }
     #grilla header h1 {
